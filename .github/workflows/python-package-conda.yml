@@ -48,5 +48,6 @@ jobs:
               pip install cmake && \
               python setup.py install && \
               pip install pyorc && \
+              pip install tzdata && \
               pytest && \
               deactivate'
