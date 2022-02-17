@@ -49,6 +49,5 @@ jobs:
               python setup.py install && \
               pip install pyorc && \
               pip install backports.zoneinfo && \
-              pyinstaller --collect-all tzdata && \
               pytest && \
               deactivate'
