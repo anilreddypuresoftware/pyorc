@@ -45,9 +45,8 @@ jobs:
               python3 -m pip install virtualenv && python3 -m venv py38-venv && \
               source py38-venv/bin/activate && \
               python -m pip install -U pybind11 pytest pytest-cov coverage codecov && \
-              pip install cmake && \
+          
               python setup.py install && \
               pip install pyorc && \
-              pip install tzdata && \
               pytest && \
               deactivate'
