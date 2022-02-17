@@ -46,5 +46,6 @@ jobs:
               source py38-venv/bin/activate && \
               python -m pip install -U pybind11 pytest pytest-cov coverage codecov && \
               pip install cmake && \
+              pip install pyorc && \
               pytest && \
               deactivate'
