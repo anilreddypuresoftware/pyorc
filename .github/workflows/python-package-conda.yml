@@ -55,7 +55,7 @@ jobs:
               pip install tzdata && \
               pip install backports.zoneinfo && \
               set PYORC_DEBUG=1 && \
-              python -m pip install -vvv --user . && \
+              python -m pip install -vvv  . && \
               python -m pytest  && \
               
               deactivate'
