@@ -26,9 +26,12 @@ jobs:
       run: |
         conda install pytest
         python -m pip install -U pybind11 pytest pytest-cov coverage codecov
+        pip install cmake
+        python setup.py install
         pip install pyorc
-        echo %INSTALLDIR%
-        python -m pytest -vs --junitxml=./test-results.xml --cov=%INSTALLDIR% tests/
+        set PYORC_DEBUG=1
+        python -m pip install -vvv --user .
+        python -m pytest 
       
   armv64_job:
       name: Build and Test for arm64
@@ -46,10 +49,13 @@ jobs:
               python3 -m pip install virtualenv && python3 -m venv py38-venv && \
               source py38-venv/bin/activate && \
               python3 -m pip install -U pybind11 pytest pytest-cov coverage codecov && \
+              pip install cmake && \
+              python setup.py install && \
               pip install pyorc && \
               pip install tzdata && \
               pip install backports.zoneinfo && \
-              echo %INSTALLDIR% && \
-              python -m pytest -vs --junitxml=./test-results.xml --cov=%INSTALLDIR% tests/ && \
+              set PYORC_DEBUG=1 && \
+              python -m pip install -vvv --user . && \
+              python -m pytest  && \
               
               deactivate'
