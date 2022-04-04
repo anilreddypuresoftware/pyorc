@@ -52,10 +52,7 @@ jobs:
               pip install cmake && \
               python setup.py install && \
               pip install pyorc && \
-              pip install tzdata && \
-              pip install backports.zoneinfo && \
               set PYORC_DEBUG=1 && \
               python -m pip install -vvv  . && \
               python -m pytest  && \
-              
               deactivate'
