@@ -51,6 +51,8 @@ jobs:
               python3 -m pip install -U pybind11 pytest pytest-cov coverage codecov && \
               pip install cmake && \
               python setup.py install && \
+              pip install tzdata && \
+              pip install backports.zoneinfo && \
               pip install pyorc && \
               set PYORC_DEBUG=1 && \
               python -m pip install -vvv  . && \
