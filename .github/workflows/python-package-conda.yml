@@ -49,11 +49,11 @@ jobs:
               python3 -m pip install virtualenv && python3 -m venv py38-venv && \
               source py38-venv/bin/activate && \
               python3 -m pip install -U pybind11 pytest pytest-cov coverage codecov && \
-              
+              PYORC_DEBUG=1 CFLAGS="-coverage" python -m pip install -vvv  . && \
               pip install cmake && \
               pip install pybind11 && \
               pip install tzdata && \
               pip install backports.zoneinfo && \
-              PYORC_DEBUG=1 CFLAGS="-coverage" python -m pip install -vvv  . && \
+              pip install pyorc && \
               python -m pytest  && \
               deactivate'
