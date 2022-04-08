@@ -54,8 +54,6 @@ jobs:
               pip install pybind11 && \
               pip install tzdata && \
               pip install backports.zoneinfo && \
-              python setup.py install && \
-              set PYORC_DEBUG=1 && \
-              python -m pip install -vvv . && \
+              PYORC_DEBUG=1 CFLAGS="-coverage" python -m pip install -vvv  . && \
               python -m pytest  && \
               deactivate'
